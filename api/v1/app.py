@@ -14,13 +14,13 @@ def teardown(arg):
     '''tear down function'''
     storage.close()
 
+
 @app.errorhandler(404)
 def not_found(error):
     '''Handler 404 errors and return SON-formatted 404 status code response'''
     res = jsonify({'error': 'Not found'})
     res.status_code = 404
     return res
-
 
 
 if __name__ == '__main__':
